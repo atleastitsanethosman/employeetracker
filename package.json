@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "dotenv": "^10.0.0",
+    "mysql": "^2.18.1",
+    "sequelize": "^6.6.2"
+  }
+}
