@@ -24,8 +24,8 @@ function retrieveAllDept() {
         });
 };
 
-function retrieveAllRole() {
-    con.query("SELECT a.id, a.title, a.salary, b.name AS Department FROM role a LEFT JOIN department b ON a.department_id = b.id ORDER BY b.name, a.title;", 
+function retrieveAllDeptBudget() {
+    con.query("SELECT d.id AS DepartmentID, d.name AS Department, SUM(c.salary) AS TotalSalary FROM employee a LEFT JOIN role c ON a.role_id = c.id LEFT JOIN department d ON c.department_id = d.id GROUP BY d.name, d.id ORDER BY d.id", 
     (err, result) =>
     {
         if (err) throw err;
@@ -141,3 +141,4 @@ function updateEmpMgr(employeeId, mgrId) {
     });
 };
 
+retrieveAllDeptBudget();
