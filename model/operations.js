@@ -6,10 +6,11 @@ function retrieveAllEmployee() {
     con.query("SELECT a.id, concat(a.first_name, ' ', a.last_name) as Employee, c.title, d.name AS Department, c.salary, concat(b.first_name, ' ', b.last_name) AS Manager FROM employee a LEFT JOIN employee b ON a.manager_id = b.id LEFT JOIN role c ON a.role_id = c.id LEFT JOIN department d ON c.department_id = d.id ORDER BY a.last_name, a.first_name", (err, result) =>
     {
         if (err) throw err;
-        if (result)
-        {
-            console.table(result); 
-        }
+        // if (result)
+        // {
+        //     console.log("  \n"); //making sure table stars on new line.
+        //     console.table(result); 
+        // }
     });
 };
 
@@ -23,6 +24,7 @@ function retrieveAllEmployeeMgr(mgrId) {
         if (err) throw err;
         if (result)
         {
+            console.log("  \n"); //making sure table stars on new line.
             console.table(result); 
         }
     });
@@ -34,6 +36,7 @@ function retrieveAllDept() {
             if (err) throw err;
             if (result)
             {
+                console.log("  \n"); //making sure table stars on new line.
                 console.table(result); 
             }
         });
@@ -46,6 +49,7 @@ function retrieveAllDeptBudget() {
         if (err) throw err;
         if (result)
         {
+            console.log("  \n"); //making sure table stars on new line.
             console.table(result); 
         }
     });
@@ -58,6 +62,7 @@ function retrieveAllRole() {
         if (err) throw err;
         if (result)
         {
+            console.log("  \n"); //making sure table stars on new line.
             console.table(result); 
         }
     });
@@ -78,6 +83,7 @@ function addEmployee(firstName, lastName, roleId, managerID) {
         if (err) throw err;
         if (result)
         {
+            console.log("  \n"); //making sure table stars on new line.
             console.table(result); 
         }
     });
@@ -95,6 +101,7 @@ function addRole(title, salary, departmentId) {
         if (err) throw err;
         if (result)
         {
+            console.log("  \n"); //making sure table stars on new line.
             console.table(result); 
         }
     });
@@ -110,6 +117,7 @@ function addDepartment(departmentName) {
         if (err) throw err;
         if (result)
         {
+            console.log("  \n"); //making sure table stars on new line.
             console.table(result); 
         }
     });
@@ -131,6 +139,7 @@ function updateEmpRole(employeeId, roleId) {
         if (err) throw err;
         if (result)
         {
+            console.log("  \n"); //making sure table stars on new line.
             console.table(result); 
         }
     });
@@ -151,6 +160,7 @@ function updateEmpMgr(employeeId, mgrId) {
         if (err) throw err;
         if (result)
         {
+            console.log("  \n"); //making sure table stars on new line.
             console.table(result); 
         }
     });
@@ -167,8 +177,10 @@ function deleteEmployee(employeeId) {
         if (err) throw err;
         if (result)
         {
+            console.log("  \n"); //making sure table stars on new line.
             console.table(result); 
         }
+        
     });
 };
 
@@ -184,6 +196,7 @@ function deleteRole(roleId) {
         if (result)
         {
             if (result.length > 0) {
+                console.log("  \n"); //making sure table stars on new line.
                 console.table(result);
                 console.log("You must alter these employee's roles or delete these employees first!\n")
             } else {
@@ -196,6 +209,7 @@ function deleteRole(roleId) {
                     if (err) throw err;
                     if (result)
                     {
+                        console.log("  \n"); //making sure table stars on new line.
                         console.table(result); 
                     }
                 });
@@ -217,6 +231,7 @@ function deleteDept(departmentId) {
         if (result)
         {
             if (result.length > 0) {
+                console.log("  \n"); //making sure table stars on new line.
                 console.table(result);
                 console.log("You must alter these roles' departments or delete these roles first!\n")
             } else {
@@ -229,6 +244,7 @@ function deleteDept(departmentId) {
                     if (err) throw err;
                     if (result)
                     {
+                        console.log("  \n"); //making sure table stars on new line.
                         console.table(result); 
                     }
                 });
@@ -237,3 +253,19 @@ function deleteDept(departmentId) {
         }
     )
 };
+
+module.exports = {
+    retrieveAllEmployee,
+    retrieveAllEmployeeMgr,
+    retrieveAllDept,
+    retrieveAllDeptBudget,
+    retrieveAllRole,
+    addEmployee,
+    addRole,
+    addDepartment,
+    updateEmpRole,
+    updateEmpMgr,
+    deleteEmployee,
+    deleteRole,
+    deleteDept
+}
