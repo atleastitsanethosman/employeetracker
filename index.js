@@ -507,6 +507,7 @@ function startMenu() {
                 "Delete a Role",
                 "Add a new Department",
                 "Delete a Department",
+                "Exit"
             ],
             loop: false,
             pageSize: 5
@@ -550,6 +551,9 @@ function startMenu() {
                 addDepartment();
             case "Delete a Department": //
                 deleteDept();
+                break;
+            case "Exit": //
+                process.exit();
         }
     })
 };
