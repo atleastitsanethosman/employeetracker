@@ -165,7 +165,7 @@ const addEmployee = () => {
             })
         })
         }
-    }).catch((err) => {if (err) throw err})
+    })
 };
 
 //prompts and queries to add a new role to database, includes validation on characters in title.
