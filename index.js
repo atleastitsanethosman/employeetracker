@@ -273,10 +273,7 @@ const addDepartment = () => {
                 });
             })
         }
-    }).catch((err) => {
-        console.error(err);
-        startMenu();
-    });
+    })
 }
 
 // Update queries are below this line.
