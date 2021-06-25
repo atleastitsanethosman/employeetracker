@@ -270,7 +270,7 @@ const addDepartment = () => {
                         console.log(`${answers.newDept} Added`);
                         startMenu();
                     }
-                });
+                })
             })
         }
     })
@@ -546,6 +546,7 @@ function startMenu() {
                 break;
             case "Add a new Department": //
                 addDepartment();
+                break;
             case "Delete a Department": //
                 deleteDept();
                 break;
