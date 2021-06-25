@@ -25,7 +25,7 @@ A nodeJS built content management system for an SQL database tracking employee d
   # Usage
   
 The user will need to navigate to the primary directory housing the application and then enter the command ```npm start``` or ```node index``` to start the application.  The user will then be given a series of menus with available operations and prompts for needed data to work with records in the database.  A demo video is linked below. <br>
-  ![demo of application](./public/img/demoofapplication.gif) <br>
+[demonstration video](<https://drive.google.com/file/d/14oCE8pdcYtruWcePtQxLh9kvnMxEqFwv/view>) <br>
  
   
   # Contributing
